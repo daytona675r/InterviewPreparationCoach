@@ -6,6 +6,7 @@ from logic.openai_client import call_chatgpt
 from utils.session import init_session_state
 from ui.settings import render_settings_dialog
 from ui.interview_image import render_interview_image
+import os
 
 st.set_page_config(page_title="Interview Coach", layout="wide")
 col1, col2 = st.columns([6, 2])
@@ -15,7 +16,7 @@ st.title("🧠 Interview Coach – Practice smarter")
 
 init_session_state()
 
-position, job_description, topic, difficulty, mode, prompt_style, persona, image,  start_button = render_sidebar()
+openai_api_key, google_api_key, position, job_description, topic, difficulty, mode, prompt_style, persona, image,  start_button = render_sidebar()
 
 
 if start_button:
@@ -34,6 +35,8 @@ if start_button:
 
 
 if st.session_state.interview_started:
+    os.environ["OPENAI_API_KEY"] = openai_api_key 
+    os.environ["GOOGLE_API_KEY"] = google_api_key
     if image:
         render_interview_image(role=position, tone=persona)
     render_chat_interface(position=position, difficulty=difficulty)

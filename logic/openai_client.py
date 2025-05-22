@@ -1,16 +1,18 @@
 import openai
 import streamlit as st
+import os
 
 from config.settings import OPENAI_API_KEY, get_openai_settings
 from logic.security import is_valid_input, check_token_limit, track_tokens, log_rejected_input
 from utils.token_costs import get_token_cost
 
 
-openai.api_key = OPENAI_API_KEY
+
 
 def call_chatgpt(messages):
     config = get_openai_settings()
-
+    openai.api_key = os.getenv("OPENAI_API_KEY")
+    
     user_input = messages[-1]["content"] if messages else ""
     if not is_valid_input(user_input):
         st.warning("⚠️ Your input was blocked due to security filters.")

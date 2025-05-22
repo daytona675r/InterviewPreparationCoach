@@ -1,6 +1,12 @@
 import streamlit as st
+import os
 
 def render_sidebar():
+    st.sidebar.header("API keys")
+    openai_api_key = st.sidebar.text_input("OpenAI API Key", key="openai_api_key", type="password")
+    "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
+    google_api_key = st.sidebar.text_input("Google API Key", key="google_api_key", type="password")
+    "[Get an Google API key](https://developers.google.com/generative-ai/getting-started/quickstart#api-key)"
     st.sidebar.header("🎯 Interview Settings")
     position = st.sidebar.text_input("Position/Role", "Frontend Developer")
     job_description = st.sidebar.text_area("Job Description (optional)")
@@ -25,4 +31,4 @@ def render_sidebar():
 
     image =st.sidebar.checkbox("Generate Interview Image", value=False)
     start = st.sidebar.button("🚀 Start Interview")
-    return position, job_description, topic, difficulty, mode, prompt_style, persona, image, start
+    return openai_api_key, google_api_key, position, job_description, topic, difficulty, mode, prompt_style, persona, image, start

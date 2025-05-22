@@ -14,7 +14,7 @@ def extract_json_from_text(text: str) -> dict:
 def evaluate_interview_question_json(question: str, role: str = "Frontend Developer", level: str = "Medium") -> dict:
     prompt = build_question_evaluation_prompt_json(question, role, level)
 
-    genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+    genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
     messages = [
         {"role": "system", "content": "You are a strict and structured evaluator. Always return valid JSON."},
