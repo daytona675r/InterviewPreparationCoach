@@ -15,7 +15,7 @@
 💼 Target Audience: Developers, job seekers, career switchers  
 🎓 Powered by GPT-4 / GPT-3.5 and Gemini for dual evaluation  
 🧠 Judge LLM feedback on generated interview questions  
-📋 Session summaries with question, answers, scoring and cost
+📋 Session summaries with question, answers, scoring and cost  
 ▶️ Demo: https://interviewpreparation-cncegpb8hua6bjg3.germanywestcentral-01.azurewebsites.net/
 
 ---
