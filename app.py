@@ -12,7 +12,7 @@ st.set_page_config(page_title="Interview Coach", layout="wide")
 col1, col2 = st.columns([6, 2])
 with col2:
     render_settings_dialog()
-st.title("🧠 Interview Coach – Practice smarter")
+st.title("Interview Coach – Practice smarter")
 
 init_session_state()
 
