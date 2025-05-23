@@ -122,10 +122,12 @@ streamlit run app.py
 .
 ├── app.py                          # Main Streamlit App
 ├── prompts/                        # Prompt builders for different techniques
+├── config/                             
+│   └── settings.py                 # OpenAI API settings
 ├── logic/                          # LLM calling logic
 │   ├── openai_client.py
-│   ├── gemini_client.py
-│   └── question_evaluator*.py
+│   ├── security.py                 # Validation checks
+│   └── question_evaluator.py       # LLM as a judge, Question scoring
 ├── ui/                             # Streamlit UI components
 │   ├── sidebar.py
 │   ├── chat.py
@@ -135,7 +137,8 @@ streamlit run app.py
 ├── utils/                          # Token tracking, validation
 ├── .env                            # API keys
 ├── requirements.txt
-└── README.md
+├── README.md
+└── streamlit.sh                    # Start environment for Azure
 ```
 
 ---
